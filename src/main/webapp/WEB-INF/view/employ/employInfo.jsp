@@ -65,10 +65,13 @@
                         <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
+                        <a href="/resume/getResume?userid=${employ.userid}"/>我的简历</a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
+                        <a href="/resume/addreJsp?userid=${employ.userid}"/>新增简历</a>
+                    </li>
+                    <li>
+                        <a href="/employ/getEmployInfo"/>投递反馈</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -104,9 +107,9 @@
     </nav>
 </div>
 
-<div class="container">
     <div class="text-success" align="center"><h3>简历投递反馈情况</h3></div>
-    <table align="center" class="table table-striped" border="1" id="divtable" style="margin-top: 20px">
+    <div class="container" >
+    <table align="center" class="table table-striped" border="1" id="divtable" style="margin-top: 30px">
     <thead>
     <tr>
         <th>职位名称</th>
@@ -124,9 +127,12 @@
     </table>
 </div>
 
-<div class="container" align="center">
-    <a href="/position/getPosition" class="btn btn-primary">查看职位</a>
-</div>
+<%--<div class="container" align="center">--%>
+    <%--<a href="/position/getPosition" class="btn btn-primary">查看职位</a>--%>
+    <%--<span>--%>
+        <%--<a href="/resume/getResume?userid=${employ.userid}" class="btn btn-primary">我的简历</a>--%>
+    <%--</span>--%>
+<%--</div>--%>
 
 </body>
 </html>

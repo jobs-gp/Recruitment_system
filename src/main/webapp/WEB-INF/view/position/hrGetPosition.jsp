@@ -49,14 +49,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
+                    <li>
+                        <a href="/position/hrGetPositions?companyId=${employer.companyId}" />公司职位</a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
-                    </li>
-                    <li>
-                        <a href="#">XX</a>
+                        <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -105,7 +102,6 @@
             <th>职位薪资</th>
             <th>联系方式</th>
             <th>工作地址</th>
-            <th>增加职位</th>
             <th>修改职位</th>
             <th>删除职位</th>
         </tr>
@@ -121,7 +117,7 @@
                 <td>${p.possal}</td>
                 <td>${p.posphone}</td>
                 <td>${p.posloc}</td>
-                <td><a href="/position/addPositionJsp" class="btn btn-primary "/>增加职位</td>
+                <%--<td><a href="/position/addPositionJsp?=${employer.companyId}" class="btn btn-primary "/>增加职位</td>--%>
                 <td><a href="/position//updatepositionJsp?positionid=${p.positionid}" class="btn btn-primary "/>修改职位</td>
                 <td><a href="/position//deletePosition?id=${p.positionid}" class="btn btn-primary "/>删除职位</td>
             </tr>

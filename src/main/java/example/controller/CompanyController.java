@@ -67,7 +67,7 @@ public class CompanyController {
             map.put("employer",employer);
             //错误显示
             map.put("error","登录出错");
-            return "errorpage/dlsb";
+            return "loginPage/dlsb";
             }
 
     }

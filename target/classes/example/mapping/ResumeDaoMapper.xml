@@ -30,12 +30,14 @@
         select
         <include refid="Base_Column_List" />
         from t_resume
+        where userid=#{userid,jdbcType=INTEGER}
     </select>
 
     <select id="getAllResumer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from t_resume
+        where userid=#{userid,jdbcType=INTEGER}
     </select>
 
     <select id="getEmployResumeDetail" resultMap="BaseResultMap">

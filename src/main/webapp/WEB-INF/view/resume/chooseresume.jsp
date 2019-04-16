@@ -76,10 +76,13 @@
                         <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
+                        <a href="/resume/getResume?userid=${employ.userid}"/>我的简历</a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
+                        <a href="/resume/addreJsp?userid=${employ.userid}"/>新增简历</a>
+                    </li>
+                    <li>
+                        <a href="/employ/getEmployInfo"/>投递反馈</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -173,9 +176,9 @@
     </div>
 </form>
 
+<%--<div class="container">--%>
+    <%--<a href="/resume/addreJsp" class="btn btn-primary">新增简历</a>--%>
+<%--</div>--%>
 
-                <div class="container">
-                    <a href="/resume/addreJsp" class="btn btn-primary">新增简历</a>
-                </div>
 </body>
 </html>

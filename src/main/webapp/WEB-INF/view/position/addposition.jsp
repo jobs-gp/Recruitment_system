@@ -47,14 +47,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
+                    <li>
+                        <a href="/position/hrGetPositions?companyId=${employer.companyId}" />公司职位</a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
-                    </li>
-                    <li>
-                        <a href="#">XX</a>
+                        <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -94,7 +91,7 @@
 <form action="/position/addPosition" method="post">
     <fieldset>
         <legend class="text-success">添加职位</legend>
-        公司编号：<input type="text" name="companyId"><br>
+        公司编号：<input type="text" readonly="readonly" name="companyId" value="<%=request.getParameter("companyId")%>"/><br>
         职位名称：<input type="text" name="positions"><br>
         职位类型：<input type="text" name="postype"><br>
         发布时间：<input type="date" name="posdate"><br>

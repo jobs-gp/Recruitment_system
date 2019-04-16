@@ -29,7 +29,8 @@
             <img src="img/logo.jpg" width="80px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
-            <a href="#" class="btn btn-primary btn-large">登录</a>
+            <a href="login/login.jsp" class="btn btn-primary btn-large">用户注册</a>
+            <a href="login/login.jsp" class="btn btn-primary btn-large">企业注册</a>
         </div>
     </div>
 </div>

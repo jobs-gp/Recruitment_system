@@ -17,30 +17,34 @@ public class ResumeController {
 
     @Autowired
     private IResumeService resumeService;
-//查旬全部简历
+//求职者登录时查旬全部简历
     @RequestMapping(value = "getResume", method = RequestMethod.GET)
     public String getResume(HttpServletRequest request) {
-        List<Resume> re = resumeService.getAllResume();
+        String userid = request.getParameter("userid");
+        List<Resume> re = resumeService.getAllResume(userid);
         request.setAttribute("resume", re);
         return "resume/resume";
     }
 
+    //投递时查看个人简历
     @RequestMapping(value = "getOneResume",method = RequestMethod.GET)
     public String getOneResume(HttpServletRequest request){
         String positions = request.getParameter("positions");
+        String userid = request.getParameter("userid");
+//        System.out.println(userid);
         try {
             positions = new String(positions.getBytes("ISO-8859-1"), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        List<Resume> oneresume = resumeService.getAllResumer(positions);
-//        System.out.println(positions);
+        List<Resume> oneresume = resumeService.getAllResumer(positions,userid);
+//        System.out.println(positions+userid);
         request.setAttribute("oneresume",oneresume);
         return "resume/chooseresume";
     }
 
 
-    //查看求职者的简历
+    //HR查看求职者的简历
     @RequestMapping(value = "getEmployResume",method = RequestMethod.GET)
     public String getEmployResume(HttpServletRequest request){
         String resumeid = request.getParameter("resumeid");
@@ -61,6 +65,7 @@ public class ResumeController {
     }
     @RequestMapping(value = "addResume",method = RequestMethod.POST)
     public String addResume(HttpServletRequest request){
+        String userid = request.getParameter("userid");
         String realname = request.getParameter("realname");
         String idnum = request.getParameter("idnum");
         String sex = request.getParameter("sex");
@@ -78,7 +83,7 @@ public class ResumeController {
         String qq = request.getParameter("qq");
         String nowaddress = request.getParameter("nowaddress");
         int addresume = resumeService.insertResume(realname,idnum,sex,education,school,languages,lanlevel,comlevel,major,workexp,positions,exsalary,phonenum,email,qq,nowaddress);
-        return "redirect:/position/getPosition";
+        return "redirect:/employ/getEmployInfo";
     }
 
 
@@ -90,7 +95,6 @@ public class ResumeController {
         request.setAttribute("resume" ,resume);
         return "resume/editresume";
     }
-
 
     @RequestMapping(value = "/updateResumes",method = RequestMethod.POST)
     public String updateResumes(HttpServletRequest request)
@@ -114,7 +118,7 @@ public class ResumeController {
         String qq = request.getParameter("qq");
         String nowaddress = request.getParameter("nowaddress");
         resumeService.updater(id,realname,idnum,sex,education,school,languages,lanlevel,comlevel,major,workexp,positions,exsalary,phonenum,email,qq,nowaddress);
-        return "redirect:/position/getPosition";
+        return "redirect:/employ/getEmployInfo";
     }
 
 
@@ -123,7 +127,7 @@ public class ResumeController {
     public String deleteresume(int id)
 {
     resumeService.deleteresume(id);
-    return "redirect:/position/getPosition";
+    return "redirect:/employ/getEmployInfo";
 }
 
 }

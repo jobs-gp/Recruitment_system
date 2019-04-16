@@ -63,10 +63,7 @@
                         <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
-                    </li>
-                    <li>
-                        <a href="#">XX</a>
+                        <a href="/employ/getEmployInfo"/>投递反馈</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -106,7 +103,7 @@
 <form action="/resume/updateResumes" method="post">
     <fieldset>
         <legend class="text-primary">编辑用户</legend>
-        简历ID：<input type="text" name="resumeid" value="<%=request.getParameter("resumeid")%>"/><br>
+        简历ID：<input type="text" name="resumeid" readonly="readonly" value="<%=request.getParameter("resumeid")%>"/><br>
 
         修改真实姓名：<input type="text" name="realname" value="${resume.realname}"/><br>
 

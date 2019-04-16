@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface IResumeDao {
 
-    List<Resume> getAllResumes();
+    List<Resume> getAllResumes(@Param("userid") String userid);
 
-    List<Resume> getAllResumer(@Param("positions") String positions);
+    List<Resume> getAllResumer(@Param("positions") String positions,@Param("userid") String userid);
 
     List<Resume> getEmployResumeDetail(@Param("resumeid") String resumeid);
 

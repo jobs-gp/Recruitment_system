@@ -49,14 +49,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
+                    <li>
+                        <a href="/position/hrGetPositions?companyId=${employer.companyId}" />公司职位</a>
                     </li>
                     <li>
-                        <a href="#">XX</a>
-                    </li>
-                    <li>
-                        <a href="#">XX</a>
+                        <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
@@ -97,18 +94,16 @@
     <h2>${company.companyName}</h2>
 </div>
     <div class="container" style="margin-top: 25px">
-        <table class="table table-striped" align="center" valign="center" border="1">
+        <table class="table table-striped" align="center" valign="center" border="1" style="margin-top: 15px">
             <tr>
                 <th>职位编号</th>
                 <th>职位</th>
-                <th>编辑职位</th>
                 <th>职位投递详情</th>
             </tr>
         <c:forEach items="${company.positionList}" var="c">
             <tr>
                 <td>${c.positionid}</td>
                 <td>${c.positions}</td>
-                <td><a href="/position/hrGetPositions?companyId=${c.companyId}" class="btn btn-primary">编辑职位</a></td>
                 <td><a href="/position/getCompanyPositionDetail?positionid=${c.positionid}" class="btn btn-primary">职位投递详情</a></td>
             </tr>
         </c:forEach>

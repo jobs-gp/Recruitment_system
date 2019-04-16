@@ -16,13 +16,13 @@ public class ResumeServiceImpl implements IResumeService {
     private IResumeDao resumeDao;
 
     @Override
-    public List<Resume> getAllResume() {
-        return resumeDao.getAllResumes();
+    public List<Resume> getAllResume(String userid) {
+        return resumeDao.getAllResumes(userid);
     }
 
     @Override
-    public List<Resume> getAllResumer(String positions) {
-        return resumeDao.getAllResumer(positions);
+    public List<Resume> getAllResumer(String positions,String userid) {
+        return resumeDao.getAllResumer(positions,userid);
     }
 
     @Override

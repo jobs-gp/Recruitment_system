@@ -5,9 +5,9 @@ import example.pojo.Resume;
 import java.util.List;
 
 public interface IResumeService {
-    List<Resume> getAllResume();
+    List<Resume> getAllResume(String userid);
 
-    List<Resume> getAllResumer(String positions);
+    List<Resume> getAllResumer(String positions,String userid);
 
     List<Resume> getEmployResumeById(String resumeid);
 
