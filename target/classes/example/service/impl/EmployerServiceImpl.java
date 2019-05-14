@@ -29,4 +29,17 @@ public class EmployerServiceImpl implements IEmployerService {
     public Employer HrLogin(Employer employer){
         return empolyerDao.findEmployer(employer);
     }
+
+    @Override
+    public int addEmployer(String employerAccount,String employerPwd,String employerName,String employerTel,String employerEmail,String employerAddress,String companyId){
+        Employer newEmployer = new Employer();
+        newEmployer.setEmployerAccount(employerAccount);
+        newEmployer.setEmployerPwd(employerPwd);
+        newEmployer.setEmployerName(employerName);
+        newEmployer.setEmployerTel(employerTel);
+        newEmployer.setEmployerEmail(employerEmail);
+        newEmployer.setEmployerAddress(employerAddress);
+        newEmployer.setCompanyId(companyId);
+        return empolyerDao.addEmployer(newEmployer);
+    }
 }

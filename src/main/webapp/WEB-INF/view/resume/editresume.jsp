@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title>修改简历</title>
@@ -12,9 +16,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 
@@ -26,15 +30,26 @@
 
     </script>
 
+    <style>
+
+        body{
+            background-color: #F4F6F9;
+        }
+
+
+        #bg{
+            background-color: white;
+        }
+    </style>
 
 
 </head>
 <body>
-
+<div class="container-fluid" id="bg">
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employ.account},你好！</h5>
@@ -65,28 +80,6 @@
                     <li>
                         <a href="/employ/getEmployInfo"/>投递反馈</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -98,46 +91,75 @@
         </div>
     </nav>
 </div>
+</div>
 
 <div class="container">
 <form action="/resume/updateResumes" method="post">
-    <fieldset>
-        <legend class="text-primary">编辑用户</legend>
-        简历ID：<input type="text" name="resumeid" readonly="readonly" value="<%=request.getParameter("resumeid")%>"/><br>
+    <fieldset style="text-align: center">
+        <legend class="text-primary" style="font-size: 25px;width: 1140px" >修改个人简历</legend>
 
-        修改真实姓名：<input type="text" name="realname" value="${resume.realname}"/><br>
+        <div class="container"  align="center">
+            <div class="row" style="background-image: url(<%=basePath%>img/); width: 1100px"  >
+                <div class=" col-md-6 ">
+                    <div align="left"><p class="bg-info" style="width: 60%;font-size: 20px;margin-top: 10px" align="center">基本信息</p></div>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >简历编号:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;"  name="resumeid" readonly="readonly" value="<%=request.getParameter("resumeid")%>"/></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改姓名:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="realname"  value="${resume.realname}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改生日:</div> <div align="left"><input type="date" class="form-control" style="width: 60%;" name="birthdays"  value="${resume.birthdays}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改性别:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="sex"  value="${resume.sex}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改所在城市:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="city"  value="${resume.city}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改手机号:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="phonenum"  value="${resume.phonenum}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改邮箱:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="email"  value="${resume.email}" /></div><br>
+                    <%--<div style="color: #46B8DA; font-size: 15px;" align="left" >个人描述:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="perdscp"  value="" /></div><br>--%>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改个人描述:</div><div align="left"><textarea name="perdscp"  class="form-control" style="width: 60%;" > </textarea></div><br>
+                </div>
 
-        修改身份证号：<input type="text" name="idnum" value="${resume.idnum}"/><br>
+                <div class=" col-md-6 ">
+                    <div align="left"><p class="bg-info" style="width: 60%;font-size: 20px;margin-top: 10px" align="center">个人意向</p></div>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改学校名称:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="school"  value="${resume.school}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改学历:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="education"  value="${resume.education}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改专业:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="major"  value="${resume.major}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改工作经验:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="workexp"  value="${resume.workexp}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改期望职位:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="positions"  value="${resume.positions}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改期望薪资:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="exsalary"  value="${resume.exsalary}" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >修改期望工作地点:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="exaddress"  value="${resume.exaddress}" /></div><br>
+                    <div align="left" style="margin-top: 20px"><input type="submit" value="确认修改"  class="btn btn-info btn-lg "></div>
+                </div>
+            </div>
+        </div>
 
-        修改性别：<input type="text" name="sex" value="${resume.sex}"/><br>
 
-        修改学历：<input type="text" name="education" value="${resume.education}"/><br>
 
-        修改学校：<input type="text" name="school" value="${resume.school}"/><br>
+        <%--简历ID：<input type="text" name="resumeid" readonly="readonly" value="<%=request.getParameter("resumeid")%>"/><br>--%>
 
-        修改语言：<input type="text" name="languages" value="${resume.languages}"/><br>
+        <%--修改姓名：<input type="text" name="realname" value="${resume.realname}"/><br>--%>
 
-        修改语言等级：<input type="text" name="lanlevel" value="${resume.lanlevel}"/><br>
+        <%--修改生日：<input type="date" name="birthdays" value="${resume.birthdays}"/><br>--%>
 
-        修改计算机等级：<input type="text" name="comlevel" value="${resume.comlevel}"/><br>
+        <%--修改性别：<input type="text" name="sex" value="${resume.sex}"/><br>--%>
 
-        修改专业：<input type="text" name="major" value="${resume.major}"/><br>
+        <%--修改所在城市：<input type="text" name="city" value="${resume.city}"/><br>--%>
 
-        修改工作经验：<input type="text" name="workexp" value="${resume.workexp}"/><br>
+        <%--修改电话号：<input type="text" name="phonenum" value="${resume.phonenum}"/><br>--%>
 
-        修改职位：<input type="text" name="positions" value="${resume.positions}"/><br>
+        <%--修改邮箱：<input type="text" name="email" value="${resume.email}"/><br>--%>
 
-        修改期望薪资：<input type="text" name="exsalary" value="${resume.exsalary}"/><br>
+        <%--修改学校：<input type="text" name="school" value="${resume.school}"/><br>--%>
 
-        修改电话号：<input type="text" name="phonenum" value="${resume.phonenum}"/><br>
+        <%--修改学历：<input type="text" name="education" value="${resume.education}"/><br>--%>
 
-        修改电子邮件：<input type="text" name="email" value="${resume.email}"/><br>
+        <%--修改专业：<input type="text" name="major" value="${resume.major}"/><br>--%>
 
-        修改QQ号：<input type="text" name="qq" value="${resume.qq}"/><br>
+        <%--修改工作经验：<input type="text" name="workexp" value="${resume.workexp}"/><br>--%>
 
-        修改现住址：<input type="text" name="nowaddress" value="${resume.nowaddress}"/><br>
+        <%--修改期望职位：<input type="text" name="positions" value="${resume.positions}"/><br>--%>
 
-        <input type="submit" value="修改" class="btn btn-primary"/>
+        <%--修改期望薪资：<input type="text" name="exsalary" value="${resume.exsalary}"/><br>--%>
+
+        <%--修改期望工作地址：<input type="text" name="exaddress" value="${resume.exaddress}"/><br>--%>
+
+        <%--修改个人描述：<input type="text" name="perdscp" value="${resume.perdscp}"/><br>--%>
+
+        <%--<input type="submit" value="修改" class="btn btn-primary"/>--%>
     </fieldset>
 </form>
 </div>

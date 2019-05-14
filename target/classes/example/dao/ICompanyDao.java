@@ -2,6 +2,7 @@ package example.dao;
 
 import example.pojo.Company;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 public interface ICompanyDao {
 

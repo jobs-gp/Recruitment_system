@@ -26,32 +26,33 @@ public class ResumeServiceImpl implements IResumeService {
     }
 
     @Override
-    public List<Resume> getEmployResumeById(String resumeid){
+    public Resume getEmployResumeById(String resumeid){
         return resumeDao.getEmployResumeDetail(resumeid);
+    }
+
+    @Override
+    public Resume getEmp(String userid){
+        return resumeDao.getEmpResume(userid);
     }
 
 
     @Override
-    public int insertResume(String realname,String idnum,String sex,String education,String school,String languages,String lanlevel,String comlevel,String major,String workexp,String positions,String exsalary,String phonenum,String email,String qq,String nowaddress){
+    public int insertResume(String realname,String birthdays,String sex,String city,String phonenum, String email, String school, String education,String major,String workexp,String positions,String exsalary,String exaddress,String perdscp){
         Resume resumes = new Resume();
         resumes.setRealname(realname);
-        resumes.setIdnum(idnum);
+        resumes.setBirthdays(birthdays);
         resumes.setSex(sex);
-        resumes.setEducation(education);
+        resumes.setCity(city);
+        resumes.setPhonenum(phonenum);
+        resumes.setEmail(email);
         resumes.setSchool(school);
-        resumes.setLanguages(languages);
-        resumes.setLanlevel(lanlevel);
-        resumes.setComlevel(comlevel);
+        resumes.setEducation(education);
         resumes.setMajor(major);
         resumes.setWorkexp(workexp);
         resumes.setPositions(positions);
         resumes.setExsalary(exsalary);
-        resumes.setPositions(positions);
-        resumes.setExsalary(exsalary);
-        resumes.setPhonenum(phonenum);
-        resumes.setEmail(email);
-        resumes.setQq(qq);
-        resumes.setNowaddress(nowaddress);
+        resumes.setExaddress(exaddress);
+        resumes.setPerdscp(perdscp);
         return resumeDao.insertResumes(resumes);
     }
 
@@ -66,27 +67,25 @@ public class ResumeServiceImpl implements IResumeService {
     }
 
     @Override
-    public int updater(String id,String realname,String idnum,String sex,String education,String school,String languages,String lanlevel,String comlevel,String major,String workexp,String positions,String exsalary,String phonenum,String email,String qq,String nowaddress){
-        System.out.println(id);
+    public int updater(String id,String realname,String birthdays,String sex,String city,String phonenum, String email, String school, String education,String major,String workexp,String positions,String exsalary,String exaddress,String perdscp){
+//        System.out.println(id);
         Resume resume = new Resume();
         int resumeid=Integer.parseInt(id);
         resume.setResumeid(resumeid);
         resume.setRealname(realname);
-        resume.setIdnum(idnum);
+        resume.setBirthdays(birthdays);
         resume.setSex(sex);
-        resume.setEducation(education);
+        resume.setCity(city);
+        resume.setPhonenum(phonenum);
+        resume.setEmail(email);
         resume.setSchool(school);
-        resume.setLanguages(languages);
-        resume.setLanlevel(lanlevel);
-        resume.setComlevel(comlevel);
+        resume.setEducation(education);
         resume.setMajor(major);
         resume.setWorkexp(workexp);
         resume.setPositions(positions);
         resume.setExsalary(exsalary);
-        resume.setPhonenum(phonenum);
-        resume.setEmail(email);
-        resume.setQq(qq);
-        resume.setNowaddress(nowaddress);
+        resume.setExaddress(exaddress);
+        resume.setPerdscp(perdscp);
         return resumeDao.updater(resume);
     }
 

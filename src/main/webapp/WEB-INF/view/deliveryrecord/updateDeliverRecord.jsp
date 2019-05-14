@@ -9,9 +9,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 </head>
@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employer.employerAccount},你好！</h5>
@@ -52,28 +52,6 @@
                     <li>
                         <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -88,15 +66,15 @@
 <div class="container">
 <form action="/deliveryrecord/updateDeliverRecord" method="post">
 
-        <legend class="text-success">简历审核</legend>
+    <legend class="text-primary" style="font-size: 25px;width: 1140px" >简历审核</legend>
 
-        投递编号：<input type="text" name="deliverid" readonly="readonly" value="<%=request.getParameter("deliverid")%>"/><br>
+    <div style="font-size: 15px;" align="left" class="text-primary">投递编号：</div><input type="text" name="deliverid" style="width: 30%;" class="form-control" readonly="readonly" value="<%=request.getParameter("deliverid")%>"/><br>
 
-        此求职者：<input type="text" name="realname" readonly="readonly" value="${deliver.realname}"/><br>
+    <div style="font-size: 15px;" align="left" class="text-primary" >此求职者：</div><input type="text" name="realname" style="width: 30%;" class="form-control" readonly="readonly" value="${deliver.realname}"/><br>
 
-        拟用情况：<input type="text" name="acceptorrefuse" value="${deliver.acceptorrefuse}"/><br>
-        <p></p>
-        <input class="btn-primary" type="submit" value="确认修改"/>
+    <div style="font-size: 15px;" align="left" class="text-primary">拟用情况：</div><input type="text" name="acceptorrefuse" style="width: 30%;" class="form-control" value="${deliver.acceptorrefuse}"/><br>
+
+        <input class="btn btn-primary btn-lg" type="submit" value="确认修改"/>
 
 </form>
 </div>

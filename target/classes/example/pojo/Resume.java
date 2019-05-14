@@ -2,6 +2,24 @@ package example.pojo;
 
 public class Resume {
 
+
+    private int resumeid;
+    private int userid;
+    private String realname;
+    private String birthdays;
+    private String sex;
+    private String city;
+    private String phonenum;
+    private String email;
+    private String school;
+    private String education;
+    private String major;
+    private String workexp;
+    private String positions;
+    private String exsalary;
+    private String exaddress;
+    private String perdscp;
+
     public int getResumeid() {
         return resumeid;
     }
@@ -26,12 +44,12 @@ public class Resume {
         this.realname = realname;
     }
 
-    public String getIdnum() {
-        return idnum;
+    public String getBirthdays() {
+        return birthdays;
     }
 
-    public void setIdnum(String idnum) {
-        this.idnum = idnum;
+    public void setBirthdays(String birthdays) {
+        this.birthdays = birthdays;
     }
 
     public String getSex() {
@@ -42,12 +60,28 @@ public class Resume {
         this.sex = sex;
     }
 
-    public String getEducation() {
-        return education;
+    public String getCity() {
+        return city;
     }
 
-    public void setEducation(String education) {
-        this.education = education;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhonenum() {
+        return phonenum;
+    }
+
+    public void setPhonenum(String phonenum) {
+        this.phonenum = phonenum;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSchool() {
@@ -58,28 +92,12 @@ public class Resume {
         this.school = school;
     }
 
-    public String getLanguages() {
-        return languages;
+    public String getEducation() {
+        return education;
     }
 
-    public void setLanguages(String languages) {
-        this.languages = languages;
-    }
-
-    public String getLanlevel() {
-        return lanlevel;
-    }
-
-    public void setLanlevel(String lanlevel) {
-        this.lanlevel = lanlevel;
-    }
-
-    public String getComlevel() {
-        return comlevel;
-    }
-
-    public void setComlevel(String comlevel) {
-        this.comlevel = comlevel;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getMajor() {
@@ -114,57 +132,19 @@ public class Resume {
         this.exsalary = exsalary;
     }
 
-    public String getPhonenum() {
-        return phonenum;
+    public String getExaddress() {
+        return exaddress;
     }
 
-    public void setPhonenum(String phonenum) {
-        this.phonenum = phonenum;
+    public void setExaddress(String exaddress) {
+        this.exaddress = exaddress;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPerdscp() {
+        return perdscp;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPerdscp(String perdscp) {
+        this.perdscp = perdscp;
     }
-
-    public String getQq() {
-        return qq;
-    }
-
-    public void setQq(String qq) {
-        this.qq = qq;
-    }
-
-    public String getNowaddress() {
-        return nowaddress;
-    }
-
-    public void setNowaddress(String nowaddress) {
-        this.nowaddress = nowaddress;
-    }
-
-    //[{"1111":1,"12":"12"},{}]
-    private int resumeid;
-    private int userid;
-    private String realname;
-    private String idnum;
-    private String sex;
-    private String education;
-    private String school;
-    private String languages;
-    private String lanlevel;
-    private String comlevel;
-    private String major;
-    private String workexp;
-    private String positions;
-    private String exsalary;
-    private String phonenum;
-    private String email;
-    private String qq;
-    private String nowaddress;
-
-
 }

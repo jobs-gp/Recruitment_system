@@ -52,6 +52,11 @@ public class CompanyController {
 
 
 
+    @RequestMapping(value = "hrLoginJsp",method = RequestMethod.GET)
+    public String hrLoginJsp(){
+        return "loginPage/hrLogin";
+    }
+
     @RequestMapping("HrLogin")
     public String HrLogin(Employer employer, Map<String,Object> map,HttpSession session){
         //hr登录
@@ -71,14 +76,6 @@ public class CompanyController {
             }
 
     }
-
-
-//    @RequestMapping(value = "getCompanyDetail",method = RequestMethod.GET)
-//    public String getCompanyDetail(HttpServletRequest request) {
-////        List<DeliverDetail> manage = companyService.getAllinfor();
-////        request.setAttribute("manage",manage);
-//        return "company/companydetail";
-//    }
 
 
 

@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title>增加职位</title>
@@ -11,18 +15,30 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
+
+    <style>
+
+        body{
+            background-color: #F4F6F9;
+        }
+
+
+        #bg{
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container-fluid" id="bg">
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employer.employerAccount},你好！</h5>
@@ -53,28 +69,7 @@
                     <li>
                         <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
+
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -86,23 +81,51 @@
         </div>
     </nav>
 </div>
+</div>
+
 
 <div class="container">
 <form action="/position/addPosition" method="post">
-    <fieldset>
-        <legend class="text-success">添加职位</legend>
-        公司编号：<input type="text" readonly="readonly" name="companyId" value="<%=request.getParameter("companyId")%>"/><br>
-        职位名称：<input type="text" name="positions"><br>
-        职位类型：<input type="text" name="postype"><br>
-        发布时间：<input type="date" name="posdate"><br>
-        职位数量：<input type="text" name="posnum"><br>
-        职位描述：<input type="text" name="posdes"><br>
-        职位要求：<input type="text" name="posreq"><br>
-        薪 &nbsp;&nbsp;&nbsp;&nbsp; 资：&nbsp;<input type="text" name="possal"><br>
-        联系电话：<input type="text" name="posphone"><br>
-        工作地点：<input type="text" name="posloc"><br>
-        <p></p>
-        <input type="submit" value="提交" class=" btn-primary">
+    <fieldset style="text-align: center">
+        <%--<legend class="text-primary" style="font-size: 25px;width: 1140px" >新增职位</legend>--%>
+
+        <div class="container"  align="center">
+            <div class="row" style="background-image: url(<%=basePath%>img/); width: 1100px"  >
+                <div class=" col-md-6 ">
+                    <%--<div align="left"><p class="bg-info" style="width: 60%;font-size: 20px;margin-top: 10px" align="center">基本信息</p></div>--%>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >公司编号:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;"  name="companyId" readonly="readonly" value="<%=request.getParameter("companyId")%>"/></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >职位名称:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="positions"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >职位类型:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="postype"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >发布时间:</div> <div align="left"><input type="date" class="form-control" style="width: 60%;" name="posdate"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >职位描述:</div><div align="left"><textarea name="posdes" class="form-control" style="width: 60%;" > </textarea></div><br>
+                        <div align="left" style="margin-top: 20px"><input type="submit" value="确认新增"  class="btn btn-info btn-lg "></div>
+                </div>
+
+                <div class=" col-md-6 ">
+                    <%--<div align="left"><p class="bg-info" style="width: 60%;font-size: 20px;margin-top: 10px" align="center">个人意向</p></div>--%>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >职位数量:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="posnum"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >职位薪资:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="possal"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >联系电话:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="posphone"  value="" /></div><br>
+                    <div style="color: #46B8DA; font-size: 15px;" align="left" >工作地点:</div> <div align="left"><input type="text" class="form-control" style="width: 60%;" name="posloc"  value="" /></div><br>
+                        <div style="color: #46B8DA; font-size: 15px;" align="left" >职位要求:</div><div align="left"><textarea name="posreq" class="form-control" style="width: 60%;" > </textarea></div><br>
+                </div>
+
+            </div>
+        </div>
+
+        <%--公司编号：<input type="text" readonly="readonly" name="companyId" value="<%=request.getParameter("companyId")%>"/><br>--%>
+        <%--职位名称：<input type="text" name="positions"><br>--%>
+        <%--职位类型：<input type="text" name="postype"><br>--%>
+        <%--发布时间：<input type="date" name="posdate"><br>--%>
+        <%--职位数量：<input type="text" name="posnum"><br>--%>
+        <%--职位描述：<input type="text" name="posdes"><br>--%>
+        <%--职位要求：<input type="text" name="posreq"><br>--%>
+        <%--薪资：<input type="text" name="possal"><br>--%>
+        <%--联系电话：<input type="text" name="posphone"><br>--%>
+        <%--工作地点：<input type="text" name="posloc"><br>--%>
+        <%--<p></p>--%>
+        <%--<input type="submit" value="提交" class=" btn-primary">--%>
+
     </fieldset>
 </form>
 </div>

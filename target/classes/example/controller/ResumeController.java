@@ -48,11 +48,18 @@ public class ResumeController {
     @RequestMapping(value = "getEmployResume",method = RequestMethod.GET)
     public String getEmployResume(HttpServletRequest request){
         String resumeid = request.getParameter("resumeid");
-        List<Resume> employresume = resumeService.getEmployResumeById(resumeid);
+        Resume employresume = resumeService.getEmployResumeById(resumeid);
         request.setAttribute("employresume",employresume);
         return "resume/getemployresume";
     }
 
+    @RequestMapping(value = "perResume",method = RequestMethod.GET)
+    public String perResume(HttpServletRequest request){
+        String userid = request.getParameter("userid");
+        Resume emp = resumeService.getEmp(userid);
+        request.setAttribute("emp",emp);
+        return "resume/employGetOwnResume";
+    }
 
 
 
@@ -67,22 +74,21 @@ public class ResumeController {
     public String addResume(HttpServletRequest request){
         String userid = request.getParameter("userid");
         String realname = request.getParameter("realname");
-        String idnum = request.getParameter("idnum");
+        String birthdays = request.getParameter("birthdays");
         String sex = request.getParameter("sex");
-        String education = request.getParameter("education");
+        String city = request.getParameter("city");
+        String phonenum = request.getParameter("phonenum");
+        String email = request.getParameter("email");
         String school = request.getParameter("school");
-        String languages = request.getParameter("languages");
-        String lanlevel = request.getParameter("lanlevel");
-        String comlevel = request.getParameter("comlevel");
+        String education = request.getParameter("education");
         String major = request.getParameter("major");
         String workexp = request.getParameter("workexp");
         String positions = request.getParameter("positions");
         String exsalary = request.getParameter("exsalary");
-        String phonenum = request.getParameter("phonenum");
-        String email = request.getParameter("email");
-        String qq = request.getParameter("qq");
-        String nowaddress = request.getParameter("nowaddress");
-        int addresume = resumeService.insertResume(realname,idnum,sex,education,school,languages,lanlevel,comlevel,major,workexp,positions,exsalary,phonenum,email,qq,nowaddress);
+        String exaddress = request.getParameter("exaddress");
+        String perdscp = request.getParameter("perdscp");
+
+        int addresume = resumeService.insertResume(realname,birthdays,sex,city,phonenum,email,school,education,major,workexp,positions,exsalary,exaddress,perdscp);
         return "redirect:/employ/getEmployInfo";
     }
 
@@ -100,24 +106,21 @@ public class ResumeController {
     public String updateResumes(HttpServletRequest request)
     {
         String id = request.getParameter("resumeid");
-        System.out.println(id);
         String realname = request.getParameter("realname");
-        String idnum = request.getParameter("idnum");
+        String birthdays = request.getParameter("birthdays");
         String sex = request.getParameter("sex");
-        String education = request.getParameter("education");
+        String city = request.getParameter("city");
+        String phonenum = request.getParameter("phonenum");
+        String email = request.getParameter("email");
         String school = request.getParameter("school");
-        String languages = request.getParameter("languages");
-        String lanlevel = request.getParameter("lanlevel");
-        String comlevel = request.getParameter("comlevel");
+        String education = request.getParameter("education");
         String major = request.getParameter("major");
         String workexp = request.getParameter("workexp");
         String positions = request.getParameter("positions");
         String exsalary = request.getParameter("exsalary");
-        String phonenum = request.getParameter("phonenum");
-        String email = request.getParameter("email");
-        String qq = request.getParameter("qq");
-        String nowaddress = request.getParameter("nowaddress");
-        resumeService.updater(id,realname,idnum,sex,education,school,languages,lanlevel,comlevel,major,workexp,positions,exsalary,phonenum,email,qq,nowaddress);
+        String exaddress = request.getParameter("exaddress");
+        String perdscp = request.getParameter("perdscp");
+        resumeService.updater(id,realname,birthdays,sex,city,phonenum,email,school,education,major,workexp,positions,exsalary,exaddress,perdscp);
         return "redirect:/employ/getEmployInfo";
     }
 

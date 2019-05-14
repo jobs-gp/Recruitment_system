@@ -10,9 +10,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 
@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employ.account},你好！</h5>
@@ -61,28 +61,6 @@
                     </li>
                     <li>
                         <a href="#">XX</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">

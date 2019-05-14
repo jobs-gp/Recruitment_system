@@ -8,6 +8,7 @@ example\dao\IResumeDao.class
 example\pojo\Deliveryrecord.class
 example\service\IPositionService.class
 example\pojo\Resume.class
+example\controller\RegisterController.class
 example\service\ICompanyService.class
 example\controller\CompanyController.class
 example\controller\DeliveryrecordController.class

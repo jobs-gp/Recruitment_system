@@ -8,6 +8,7 @@ import example.pojo.Company;
 import example.pojo.Employer;
 import example.pojo.Position;
 import example.service.ICompanyService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

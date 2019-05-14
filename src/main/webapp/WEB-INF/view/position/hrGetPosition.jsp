@@ -12,9 +12,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 
@@ -24,7 +24,7 @@
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employer.employerAccount},你好！</h5>
@@ -55,28 +55,6 @@
                     <li>
                         <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -90,15 +68,15 @@
 </div>
 
 <div class="container">
-    <table class="table table-bordered">
-        <tr>
+    <table class="table table-striped table-bordered table-hover">
+        <tr class="text-primary">
             <th>职位编号</th>
             <th>职位</th>
             <th>职位类型</th>
             <th>发布时间</th>
             <th>职位数量</th>
-            <th>职位描述</th>
-            <th>职位要求</th>
+            <%--<th>职位描述</th>--%>
+            <%--<th>职位要求</th>--%>
             <th>职位薪资</th>
             <th>联系方式</th>
             <th>工作地址</th>
@@ -112,8 +90,8 @@
                 <td>${p.postype}</td>
                 <td>${p.posdate}</td>
                 <td>${p.posnum}</td>
-                <td>${p.posdes}</td>
-                <td>${p.posreq}</td>
+                <%--<td>${p.posdes}</td>--%>
+                <%--<td>${p.posreq}</td>--%>
                 <td>${p.possal}</td>
                 <td>${p.posphone}</td>
                 <td>${p.posloc}</td>

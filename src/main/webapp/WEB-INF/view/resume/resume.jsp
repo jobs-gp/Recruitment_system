@@ -15,9 +15,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 
@@ -28,6 +28,9 @@
         }
     </script>
 
+
+
+
 </head>
 <body>
 
@@ -35,7 +38,7 @@
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <%--<a href="#" class="btn btn-primary btn-large">登录</a>--%>
@@ -73,28 +76,6 @@
                     <li>
                         <a href="/employ/getEmployInfo"/>投递反馈</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -109,52 +90,53 @@
 
 <div class="container">
 <form id="listResume" method="post">
-<table align="center" class="table table-striped" border="1">
-    <tr>
-        <th>简历编号</th>
-        <th>用户编号</th>
-        <th>真实姓名</th>
-        <th>身份证号</th>
-        <th>性别</th>
-        <th>教育经历</th>
-        <th>毕业院校</th>
-        <th>掌握语言</th>
-        <th>语言等级</th>
-        <th>计算机等级</th>
-        <th>专业</th>
-        <th>工作经验</th>
-        <th>职位</th>
-        <th>期望薪资</th>
+
+<table align="center" border="1" class="table table-striped table-bordered table-hover">
+
+    <tr class="text-primary">
+        <%--<th>简历编号</th>--%>
+        <%--<th>用户编号</th>--%>
+        <th>姓名</th>
+        <%--<th>生日</th>--%>
+        <%--<th>性别</th>--%>
+        <th>所在城市</th>
         <th>电话号</th>
-        <th>邮箱</th>
-        <th>qq</th>
-        <th>现住址</th>
+        <%--<th>邮箱</th>--%>
+        <%--<th>学校名称</th>--%>
+        <th>学历</th>
+        <th>专业</th>
+        <%--<th>工作经验</th>--%>
+        <th>期望职位</th>
+        <th>期望薪资</th>
+        <th>期望工作地点</th>
+        <th>简历详情</th>
         <th>修改简历</th>
         <th>删除简历</th>
     </tr>
+
     <c:forEach items="${resume}" var="resume">
-        <tr>
-            <td>${resume.resumeid}</td>
-            <td>${resume.userid}</td>
+        <tbody>
+        <tr >
+            <%--<td>${resume.resumeid}</td>--%>
+            <%--<td>${resume.userid}</td>--%>
             <td>${resume.realname}</td>
-            <td>${resume.idnum}</td>
-            <td>${resume.sex}</td>
+            <%--<td>${resume.birthdays}</td>--%>
+            <%--<td>${resume.sex}</td>--%>
+            <td>${resume.city}</td>
+            <td>${resume.phonenum}</td>
+            <%--<td>${resume.email}</td>--%>
+            <%--<td>${resume.school}</td>--%>
             <td>${resume.education}</td>
-            <td>${resume.school}</td>
-            <td>${resume.languages}</td>
-            <td>${resume.lanlevel}</td>
-            <td>${resume.comlevel}</td>
             <td>${resume.major}</td>
-            <td>${resume.workexp}</td>
+            <%--<td>${resume.workexp}</td>--%>
             <td>${resume.positions}</td>
             <td>${resume.exsalary}</td>
-            <td>${resume.phonenum}</td>
-            <td>${resume.email}</td>
-            <td>${resume.qq}</td>
-            <td>${resume.nowaddress}</td>
+            <td>${resume.exaddress}</td>
+            <td><a href="/resume/perResume?userid=${resume.userid}" class="btn btn-primary">简历详情</a></td>
             <td><input type="button" value="修改" class="btn btn-primary " onclick="updateResume(${resume.resumeid});"/></td>
             <td><a href="/resume/deleteresume?id=${resume.resumeid}" class="btn btn-primary ">删除</a></td>
         </tr>
+        </tbody>
     </c:forEach>
 
         <%--<a href="/resume/addreJsp?userid=${employ.userid}">新增简历</a>--%>

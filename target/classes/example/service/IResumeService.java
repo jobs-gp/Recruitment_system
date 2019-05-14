@@ -9,14 +9,17 @@ public interface IResumeService {
 
     List<Resume> getAllResumer(String positions,String userid);
 
-    List<Resume> getEmployResumeById(String resumeid);
+    Resume getEmployResumeById(String resumeid);
 
-    int insertResume(String realname,String idnum,String sex,String education,String school,String languages,String lanlevel,String comlevel,String major,String workexp,String positions,String exsalary,String phonenum,String email,String qq,String nowaddress);
+    Resume getEmp(String userid);
+
+    int insertResume(String realname,String birthdays,String sex,String city,String phonenum, String email, String school, String education,String major,String workexp,String positions,String exsalary,String exaddress,String perdscp);
 
     void deleteresume(java.io.Serializable id);
 
     Resume getResumeById(String id);
 
-    int updater(String id,String realname,String idnum,String sex,String education,String school,String languages,String lanlevel,String comlevel,String major,String workexp,String positions,String exsalary,String phonenum,String email,String qq,String nowaddress);
+    int updater(String id,String realname,String birthdays,String sex,String city,String phonenum, String email, String school, String education,String major,String workexp,String positions,String exsalary,String exaddress,String perdscp);
 
 }
+

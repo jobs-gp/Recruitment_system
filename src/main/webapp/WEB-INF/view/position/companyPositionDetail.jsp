@@ -12,9 +12,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="../../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/jquery-1.9.1.js"></script>
 
     <script src="../../../js/bootstrap.min.js"></script>
 
@@ -25,15 +25,28 @@
         }
     </script>
 
+    <style>
+
+        body{
+            background-color: #F4F6F9;
+        }
+
+
+        #bg{
+            background-color: white;
+        }
+    </style>
+
+
 
 </head>
 <body>
-
+<div class="container-fluid" id="bg">
 <!--logo部分-->
 <div class="container">
     <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img src="../../../img/logo.jpg" width="80px" height="80px" />
+            <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
             <h5>${employer.employerAccount},你好！</h5>
@@ -64,28 +77,6 @@
                     <li>
                         <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门职位 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">安卓开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">ios开发工程师</a>
-                            </li>
-                            <li>
-                                <a href="#">大数据工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">java高级工程师</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#">算法工程师</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -97,20 +88,21 @@
         </div>
     </nav>
 </div>
+</div>
 
-
-<div class="text-primary" align="center"><h3>职位详情</h3></div>
+<div class="container">
+    <div align="center"><h3><strong>该职位详情</strong></h3></div></div>
     <form id="listRecord" method="post">
         <div class="container" style="margin-top: 20px">
-            <table class="table table-striped" align="center" valign="center" border="1">
-                 <tr>
+            <table class="table  table-striped table-bordered table-hover" align="center" valign="center" border="1">
+                 <tr >
                     <th>职位编号</th>
                     <th>职位</th>
                     <th>职位类型</th>
                     <th>发布时间</th>
                     <th>职位数量</th>
-                    <th>职位描述</th>
-                    <th>职位要求</th>
+                    <%--<th>职位描述</th>--%>
+                    <%--<th>职位要求</th>--%>
                     <th>薪资</th>
                     <th>联系电话</th>
                     <th>工作地址</th>
@@ -122,8 +114,8 @@
                     <td>${p.postype}</td>
                     <td>${p.posdate}</td>
                     <td>${p.posnum}</td>
-                    <td>${p.posdes}</td>
-                    <td>${p.posreq}</td>
+                    <%--<td>${p.posdes}</td>--%>
+                    <%--<td>${p.posreq}</td>--%>
                     <td>${p.possal}</td>
                     <td>${p.posphone}</td>
                     <td>${p.posloc}</td>
@@ -134,31 +126,32 @@
     </form>
 </div>
 
-
-<div class="text-primary" align="center"><h3>此职位的简历投递情况</h3></div>
+<div class="container">
+<div class="text-primary" align="center"><h3>该职位的投递情况</h3></div></div>
     <div class="container">
-    <table class="table table-striped" align="center" border="1" style="margin-top: 20px">
-        <tr>
-            <th>投递编号</th>
-            <th>职位编号</th>
-            <th>用户编号</th>
-            <th>简历编号</th>
+    <table class="table  table-striped table-bordered table-hover" align="center" border="1" style="margin-top: 20px">
+        <tr class="text-primary">
+            <%--<th>投递编号</th>--%>
+            <%--<th>职位编号</th>--%>
+            <%--<th>用户编号</th>--%>
             <th>求职者姓名</th>
             <th>投递的职位</th>
             <th>拟用情况</th>
+            <th>简历详情</th>
             <th>权限操作</th>
         </tr>
         <c:forEach items="${deliveryrecord}" var="c">
-            <tr>
-                <td>${c.deliverid}</td>
-                <td>${c.positionid}</td>
-                <td>${c.userid}</td>
-                <td><a href="/resume/getEmployResume?resumeid=${c.resumeid}">${c.resumeid}</a></td>
-                <td>${c.realname}</td>
-                <td>${c.positions}</td>
-                <td style="color: red">${c.acceptorrefuse}</td>
-                <td><input class="btn btn-primary" type="button" value="修改" onclick="updateRecord(${c.deliverid});"/></td>
-            </tr>
+        <tr>
+                <%--<td>${c.deliverid}</td>--%>
+                <%--<td>${c.positionid}</td>--%>
+                <%--<td>${c.userid}</td>--%>
+
+            <td>${c.realname}</td>
+            <td>${c.positions}</td>
+            <td style="color: red">${c.acceptorrefuse}</td>
+            <td><a href="/resume/getEmployResume?resumeid=${c.resumeid}" class="btn btn-primary">简历详情</a></td>
+            <td><input class="btn btn-primary" type="button" value="修改" onclick="updateRecord(${c.deliverid});"/></td>
+        </tr>
         </c:forEach>
     </div>
 </table>

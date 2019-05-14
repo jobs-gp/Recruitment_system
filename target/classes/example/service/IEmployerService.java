@@ -13,4 +13,6 @@ public interface IEmployerService {
     String getCompanyId( HttpSession session);
 
     Employer HrLogin(Employer employer);
+
+    int addEmployer(String employerAccount,String employerPwd,String employerName,String employerTel,String employerEmail,String employerAddress,String companyId);
 }
