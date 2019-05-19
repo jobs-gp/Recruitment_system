@@ -123,6 +123,30 @@
       <version>1.1.1</version>
     </dependency>-->
       <!-- JSTL标签类 -->
+      <!-- 引入Elasticsearch相关jar包-->
+
+
+      <!--<dependency>-->
+          <!--<groupId>org.elasticsearch</groupId>-->
+          <!--<artifactId>elasticsearch</artifactId>-->
+          <!--<version>${elasticsearch.6.3.2}</version>-->
+      <!--</dependency>-->
+      <dependency>
+          <groupId>org.elasticsearch.client</groupId>
+          <artifactId>elasticsearch-rest-high-level-client</artifactId>
+          <version>6.3.2</version>
+      </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.elasticsearch.client</groupId>-->
+          <!--<artifactId>transport</artifactId>-->
+          <!--<version>${elasticsearch.version}</version>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+          <!--<groupId>org.elasticsearch.client</groupId>-->
+          <!--<artifactId>elasticsearch-rest-high-level-client</artifactId>-->
+          <!--<version>${elasticsearch.version}</version>-->
+      <!--</dependency>-->
       <dependency>
           <groupId>jstl</groupId>
           <artifactId>jstl</artifactId>

@@ -24,7 +24,8 @@
             <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
-            <h5>${employer.employerAccount},你好！</h5>
+            <span style="font-size: 15px" class="glyphicon glyphicon-user"><span>${employer.employerAccount},你好！</span></span>
+            <%--<h5>${employer.employerAccount},你好！</h5>--%>
         </div>
     </div>
 </div>
@@ -47,10 +48,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/position/hrGetPositions?companyId=${employer.companyId}" />公司职位</a>
+                        <a href="/position/hrGetPositions?companyId=${employer.companyId}" class="navbar-brand"/>公司职位</a>
                     </li>
                     <li>
-                        <a href="/position/addPositionJsp?companyId=${employer.companyId}" >增加职位</a>
+                        <a href="/position/addPositionJsp?companyId=${employer.companyId}" class="navbar-brand"/>增加职位</a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
@@ -72,7 +73,7 @@
 
     <div style="font-size: 15px;" align="left" class="text-primary" >此求职者：</div><input type="text" name="realname" style="width: 30%;" class="form-control" readonly="readonly" value="${deliver.realname}"/><br>
 
-    <div style="font-size: 15px;" align="left" class="text-primary">拟用情况：</div><input type="text" name="acceptorrefuse" style="width: 30%;" class="form-control" value="${deliver.acceptorrefuse}"/><br>
+    <div style="font-size: 15px;" align="left" class="text-primary">拟用情况：</div><select name="acceptorrefuse" style="width: 30%;" class="form-control" value="${deliver.acceptorrefuse}"><option>--请选择--</option><option>通过</option><option>拒绝</option></select><br>
 
         <input class="btn btn-primary btn-lg" type="submit" value="确认修改"/>
 

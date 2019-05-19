@@ -50,8 +50,8 @@
             <img src="img/logo2.jpg"  width=160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 35px;">
-            <a href="/register/addEmployJsp" style="text-decoration: none;color: black;font-size: 10px">求职者注册</a>
-            <a href="/register/addEmployerJsp" style="text-decoration: none;color: black;font-size: 10px">企业注册</a>
+            <a href="/register/addEmployJsp" style="text-decoration: none;color: black;font-size: 15px">求职者注册</a>
+            <a href="/register/addEmployerJsp" style="text-decoration: none;color: black;font-size: 15px">企业注册</a>
         </div>
     </div>
     </div>
@@ -75,18 +75,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/employ/employLoginJsp">求职者登录</a>
+                        <a href="/employ/employLoginJsp" class="navbar-brand">求职者登录</a>
                     </li>
                     <li>
-                        <a href="/company/hrLoginJsp">企业登录</a>
+                        <a href="/company/hrLoginJsp" class="navbar-brand">企业登录</a>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" size="35" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">搜索</button>
-                </form>
+                <%--<form class="navbar-form navbar-right" role="search">--%>
+                    <%--<div class="form-group">--%>
+                        <%--<input type="text" class="form-control" size="35" placeholder="Search">--%>
+                    <%--</div>--%>
+                    <%--<button type="submit" class="btn btn-default">搜索</button>--%>
+                <%--</form>--%>
             </div>
         </div>
     </nav>
@@ -155,21 +155,26 @@
             <div class="col-md-4 my-4 home-grid">
                 <span class="head-line"></span>
                 <span class="fa fa-info-circle" aria-hidden="true"></span>
-                <h4 class="home-title my-3">why choose us</h4>
-                <p> Pellentesque in ipsum id orci porta dapibus roined magna orem ipsum dolor sit amet,consetetur.</p>
+                <h4 class="home-title my-3"><strong>优质</strong></h4>
+                <p> 200+ 本站自营猎头
+                    本站独有高端人才库
+                    人工筛选优质人才.</p>
 
             </div>
             <div class="col-md-4 my-4 home-grid">
                 <span class="head-line"></span>
                 <span class="fa fa-connectdevelop" aria-hidden="true"></span>
-                <h4 class="home-title my-3">what we do</h4>
-                <p> Pellentesque in ipsum id orci porta dapibus roined magna orem ipsum dolor sit amet,consetetur.</p>
+                <h4 class="home-title my-3"><strong>有实力</strong></h4>
+                <p> 3次总理接见,4年完成5轮融资
+                    已进入IPO筹备阶段.</p>
 
             </div>
             <div class="col-md-4 my-4 home-grid">
                 <span class="fa fa-users" aria-hidden="true"></span>
-                <h4 class="home-title my-3">explore yourself</h4>
-                <p> Pellentesque in ipsum id orci porta dapibus roined magna orem ipsum dolor sit amet,consetetur.</p>
+                <h4 class="home-title my-3"><strong>有效</strong></h4>
+                <p> BAT、TMD互联网人才招聘NO.1渠道
+                    百度、今日头条产研职位在本站发布
+                    B轮以上公司，60%互联网人才来自本站.</p>
 
             </div>
         </div>
@@ -196,13 +201,7 @@
 
 <div class="container">
     <div class="footer-top-w3ls">
-        <p class="text-white">Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt
-            ut labore et dolore magna aliquyam
-            erat, At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, no sea
-            takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus
-            est
-            Lorem ipsum dolor sit amet. no sea takimata sanctus est Lorem ipsum dolor sit amet. no sea takimata
-            sanctus est Lorem ipsum dolor sit amet. sed diam voluptua. </p>
+        <p class="text-white" style="font-size: 18px">本站是一家专为拥有3至10年工作经验的资深互联网从业者，提供工作机会的招聘网站。本站专注于在为求职者提供更人性化、专业化服务的同时，降低企业端寻觅良才的时间和成本。本站致力于帮助互联网人士做出更好的职业选择，让求职者每一次职业选择变的更加明智。 </p>
     </div>
 </div>
 <!--友情链接和版权信息-->
@@ -210,16 +209,16 @@
     <div class="row">
         <div class="" align="center">
             <div style="margin-top: 15px; font-size: 15px">
-                <a href="#">关于我们</a>
-                <a href="#">联系我们</a>
-                <a href="#">招贤纳士</a>
-                <a href="#">法律声明</a>
-                <a href="#">友情链接</a>
-                <a href="#">服务声明</a>
-                <a href="#">广告声明</a>
+                <a href="#"><span style="color: black">关于我们</span></a>
+                <a href="#"><span style="color: black">联系我们</span></a>
+                <a href="#"><span style="color: black">招贤纳士</span></a>
+                <a href="#"><span style="color: black">法律声明</span></a>
+                <a href="#"><span style="color: black">友情链接</span></a>
+                <a href="#"><span style="color: black">服务声明</span></a>
+                <a href="#"><span style="color: black">广告声明</span></a>
                 <p style="margin-top: 12px; color: black" >
                     <b style="font-size: 15px">
-                        北京石油化工学院康庄校区 3086寝  吴逸新  联系电话：XXXX-XXXXXXX
+                        北京石油化工学院康庄校区 3086寝  吴少轩  联系电话：XXXX-XXXXXXX
                     </b>
                 </p>
             </div>

@@ -41,7 +41,8 @@
             <img src="../../../img/logo2.jpg" width="160px" height="80px" />
         </div>
         <div align="right" class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 25px;">
-            <h5>${employ.account},你好！</h5>
+            <span style="font-size: 15px" class="glyphicon glyphicon-user"><span>${employ.account},你好！</span></span>
+            <%--<h5>${employ.account},你好！</h5>--%>
         </div>
     </div>
 </div>
@@ -63,11 +64,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/position/getPosition"/>职位浏览<span class="sr-only">(current)</span></a>
+                    <li>
+                        <a href="/position/getPosition" class="navbar-brand"/>职位浏览<span class="sr-only">(current)</span></a>
                     </li>
                     <li>
-                        <a href="/employ/getEmployInfo"/>投递反馈</a>
+                        <a href="/employ/getEmployInfo" class="navbar-brand"/>投递反馈</a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">

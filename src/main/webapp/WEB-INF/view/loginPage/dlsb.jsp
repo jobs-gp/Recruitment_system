@@ -60,12 +60,12 @@
     </nav>
 </div>
 <div class="container">
-<b class="text-danger">
+<b class="text-danger" style="font-size: 20px;font-family: 华文楷体">
 登录失败!请检查账号或密码出错！
 ${message}
 </b>
 <br >
-<a href="<%=path%>/index.jsp" rel="external nofollow" style="text-decoration: none">返回</a>
+<a href="<%=path%>/index.jsp" rel="external nofollow" style="text-decoration: none;font-family: 华文楷体">返回</a>
 </div>
 </body>
 </html>

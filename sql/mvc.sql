@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2019-05-14 17:12:24
+Date: 2019-05-19 08:44:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,12 +52,18 @@ CREATE TABLE `t_deliveryrecord` (
   KEY `userid` (`userid`),
   KEY `positionid` (`positionid`),
   KEY `resumeid` (`resumeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_deliveryrecord
 -- ----------------------------
 INSERT INTO `t_deliveryrecord` VALUES ('15', '2', '1', '14', '赵枫枫', 'Java研发工程师', '通过');
+INSERT INTO `t_deliveryrecord` VALUES ('17', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
+INSERT INTO `t_deliveryrecord` VALUES ('18', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
+INSERT INTO `t_deliveryrecord` VALUES ('19', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
+INSERT INTO `t_deliveryrecord` VALUES ('20', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
+INSERT INTO `t_deliveryrecord` VALUES ('21', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
+INSERT INTO `t_deliveryrecord` VALUES ('22', '2', '8', '15', '赵枫枫', 'iOS研发工程师', null);
 
 -- ----------------------------
 -- Table structure for t_employ
@@ -72,16 +78,13 @@ CREATE TABLE `t_employ` (
   `account` varchar(255) DEFAULT NULL,
   `pwd` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`autoId`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_employ
 -- ----------------------------
 INSERT INTO `t_employ` VALUES ('1', '2', '赵枫枫', '男', '22', 'zhaofengfeng', '123456');
 INSERT INTO `t_employ` VALUES ('2', '3', '刘慧慧', '女', '15', 'liuhuihui', '123456');
-INSERT INTO `t_employ` VALUES ('4', '5', '张皖豫', '男', '24', 'zhangwanyu', '123456');
-INSERT INTO `t_employ` VALUES ('14', '17', '秦鹏', '男', '24', 'qinpeng', '123456');
-INSERT INTO `t_employ` VALUES ('15', '18', '范依风', '男', '24', 'fanyifeng', '123456');
 
 -- ----------------------------
 -- Table structure for t_employer
@@ -164,9 +167,10 @@ CREATE TABLE `t_resume` (
   `perdscp` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`resumeid`),
   KEY `userid` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_resume
 -- ----------------------------
-INSERT INTO `t_resume` VALUES ('14', '2', '赵枫枫', '1996-05-02', '男', '北京', '13878789065', '123456@qq.com', '北京石油化工学院', '本科', '计算机科学与技术', '无', 'Java开发', '10000+', '朝阳区', '在工作上，对工作热情，任劳任怨，责任心强，具有良好的组织交际能力');
+INSERT INTO `t_resume` VALUES ('14', '2', '赵枫枫', '1996-05-02', '男', '北京', '13878789065', '3349583858@qq.com', '北京石油化工学院', '本科', '计算机科学与技术', '北京中软国际公司实训，参与班主任管理系统项目，完成JAVA WEB项目开发和数据库设计', 'Java开发', '10k', '朝阳区', '为人朴实正直，有积极进去的心态，努力拼搏。性格沉稳内敛，做事细心踏实，能吃苦耐劳，对工作有很强的责任感！学习能力、适应能力、承受能力较强，善于挑战自我。');
+INSERT INTO `t_resume` VALUES ('15', '2', '赵枫枫', '1996-05-02', '男', '北京', '13878789065', '3349583858@qq.com', '北京石油化工学院', '本科', '计算机科学与技术', '无', 'iOS研发工程师', '10k', '朝阳区', ' 为人朴实正直，有积极进去的心态，努力拼搏。性格沉稳内敛，做事细心踏实，能吃苦耐劳，对工作有很强的责任感！学习能力、适应能力、承受能力较强，善于挑战自我。');
